@@ -14,7 +14,7 @@
   let shooting = false;
   let audio;
   const muteBtn = document.getElementById("mute");
-  const THEME_START = 29;
+  const THEME_START = 29.5;
   let muted = false;
   let themeStarted = false;
   let themeBuffer = null;
@@ -192,7 +192,8 @@
     if (!intro) return;
     intro.classList.remove("is-shooting");
     intro.classList.add("is-done");
-    document.body.classList.remove("is-intro");
+    document.body.classList.remove("is-intro", "is-siren-hot");
+    document.body.classList.add("has-sirens");
     window.setTimeout(() => intro.remove(), 600);
   }
 
@@ -200,6 +201,7 @@
     if (shooting || !intro) return;
     shooting = true;
     startTheme();
+    document.body.classList.add("has-sirens", "is-siren-hot");
     intro.classList.add("is-shooting");
     const enterHint = intro.querySelector(".intro__enter");
     if (enterHint) enterHint.style.opacity = "0";
@@ -312,7 +314,7 @@
       "scroll",
       () => {
         const y = window.scrollY * 0.18;
-        mural.style.transform = `scale(1.08) translateY(${y}px)`;
+        mural.style.transform = `scale(1.04) translateY(${y}px)`;
       },
       { passive: true }
     );

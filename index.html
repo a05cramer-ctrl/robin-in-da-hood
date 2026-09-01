@@ -23,6 +23,12 @@
     <div class="noise" aria-hidden="true"></div>
     <canvas id="arrows" aria-hidden="true"></canvas>
     <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="sirens" id="sirens" aria-hidden="true">
+      <div class="sirens__red"></div>
+      <div class="sirens__blue"></div>
+      <div class="sirens__bar sirens__bar--top"></div>
+      <div class="sirens__bar sirens__bar--bottom"></div>
+    </div>
 
     <div class="intro" id="intro">
       <canvas class="intro__sheet" id="intro-sheet" aria-hidden="true"></canvas>
@@ -70,7 +76,12 @@
     <main id="top">
       <section class="hero">
         <div class="hero__art">
-          <img src="assets/crew.jpg" alt="Robin In Da Hood crew in the alley — Robin, Lil' John, and Friar Tucked" />
+          <img
+            src="assets/hood.jpg"
+            srcset="assets/hood.jpg 2048w, assets/hood-3x.jpg 3072w"
+            sizes="100vw"
+            alt="Robin In Da Hood crew in the alley with police lights, cash, Lil' John, Robin, and Friar Tucked"
+          />
           <div class="hero__vignette"></div>
         </div>
         <div class="marquee" aria-hidden="true">
@@ -135,7 +146,13 @@
           <h2>Three shadows. One alley. Zero fucks for the cameras.</h2>
         </div>
         <div class="crew__art-wrap">
-          <img class="crew__mural" src="assets/crew.jpg" alt="The Merry Men Crew standing in a graffiti alley" />
+          <img
+            class="crew__mural"
+            src="assets/hood.jpg"
+            srcset="assets/hood.jpg 2048w, assets/hood-3x.jpg 3072w"
+            sizes="100vw"
+            alt="The Merry Men Crew standing in a graffiti alley with police cruisers"
+          />
           <div class="crew__glow"></div>
         </div>
         <div class="crew__cards">

@@ -82,6 +82,79 @@ a {
   transition: opacity 0.3s ease;
 }
 
+.sirens {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity 0.25s ease;
+}
+
+body.has-sirens .sirens {
+  opacity: 1;
+}
+
+.sirens__red,
+.sirens__blue {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  width: 62%;
+  opacity: 0;
+}
+
+.sirens__red {
+  left: -8%;
+  background: radial-gradient(ellipse at 10% 50%, rgba(255, 16, 48, 0.72), rgba(255, 16, 48, 0.12) 42%, transparent 72%);
+  animation: sirenPulse 0.56s steps(1, end) infinite;
+}
+
+.sirens__blue {
+  right: -8%;
+  background: radial-gradient(ellipse at 90% 50%, rgba(20, 70, 255, 0.72), rgba(20, 70, 255, 0.12) 42%, transparent 72%);
+  animation: sirenPulse 0.56s steps(1, end) infinite;
+  animation-delay: 0.28s;
+}
+
+.sirens__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(90deg, #ff1430 0%, #ff1430 25%, #1638ff 25%, #1638ff 50%, #ff1430 50%, #ff1430 75%, #1638ff 75%, #1638ff 100%);
+  background-size: 200% 100%;
+  animation: sirenSweep 0.28s linear infinite;
+  box-shadow: 0 0 24px rgba(255, 20, 48, 0.65), 0 0 24px rgba(22, 56, 255, 0.65);
+}
+
+.sirens__bar--top {
+  top: 0;
+}
+
+.sirens__bar--bottom {
+  bottom: 0;
+}
+
+body.is-siren-hot .sirens__red,
+body.is-siren-hot .sirens__blue {
+  animation-duration: 0.32s;
+}
+
+body.is-siren-hot .sirens__red {
+  background: radial-gradient(ellipse at 10% 50%, rgba(255, 16, 48, 0.95), rgba(255, 16, 48, 0.28) 46%, transparent 74%);
+}
+
+body.is-siren-hot .sirens__blue {
+  background: radial-gradient(ellipse at 90% 50%, rgba(40, 90, 255, 0.95), rgba(40, 90, 255, 0.28) 46%, transparent 74%);
+}
+
+body.is-siren-hot .sirens__bar {
+  height: 14px;
+  animation-duration: 0.16s;
+}
+
 /* INTRO */
 .intro {
   position: fixed;
@@ -365,10 +438,11 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
-  filter: saturate(1.12) contrast(1.08);
-  transform: scale(1.08);
+  object-position: center center;
+  filter: saturate(1.06) contrast(1.04);
+  transform: scale(1.04);
   will-change: transform;
+  image-rendering: auto;
 }
 
 .hero__vignette {
@@ -521,7 +595,7 @@ a {
   padding: 8vh 6vw;
   background:
     linear-gradient(rgba(7, 9, 12, 0.82), rgba(7, 9, 12, 0.88)),
-    url("assets/crew.jpg") center 40% / cover fixed;
+    url("assets/hood.jpg") center center / cover fixed;
 }
 
 .story__frame h2,
@@ -608,13 +682,14 @@ a {
 
 .crew__mural {
   width: 100%;
-  max-height: 72vh;
-  object-fit: cover;
-  object-position: center 30%;
+  max-height: 82vh;
+  object-fit: contain;
+  object-position: center center;
   border: 4px solid var(--gold);
   box-shadow:
     0 0 40px rgba(245, 215, 66, 0.28),
     0 0 80px rgba(31, 138, 70, 0.25);
+  background: #07090c;
 }
 
 .crew__glow {
@@ -816,6 +891,26 @@ a {
   }
 }
 
+@keyframes sirenPulse {
+  0%,
+  49.9% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sirenSweep {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
 @keyframes introOut {
   to {
     opacity: 0;
@@ -906,7 +1001,7 @@ a {
   }
 
   .hero__art img {
-    object-position: center 28%;
+    object-position: center center;
   }
 
   .fox {
@@ -923,6 +1018,10 @@ a {
   }
 
   .intro {
+    display: none;
+  }
+
+  .sirens {
     display: none;
   }
 
