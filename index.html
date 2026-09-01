@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robin In Da Hood — $ROBINHOOD</title>
+    <meta
+      name="description"
+      content="Robin In Da Hood. Ticker ROBINHOOD. Flock on the poles. Crew on the block. We don't give a fuck. We own this shit. Take from the rich. Give to the poor."
+    />
+    <link rel="icon" href="assets/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/favicon-180.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <canvas id="arrows" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <div class="intro" id="intro">
+      <canvas class="intro__sheet" id="intro-sheet" aria-hidden="true"></canvas>
+      <div class="intro__flash" id="intro-flash" aria-hidden="true"></div>
+      <div class="intro__holes" id="intro-holes" aria-hidden="true"></div>
+      <div class="intro__spray"></div>
+      <div class="intro__copy">
+        <p class="intro__tag">Merry Men Crew</p>
+        <h1 class="intro__title">ROBIN IN DA HOOD</h1>
+        <p class="intro__ticker">$ROBINHOOD</p>
+        <p class="intro__enter"><span>PRESS ENTER</span></p>
+      </div>
+    </div>
+
+    <header class="nav">
+      <a class="nav__brand" href="#top">
+        <span class="nav__feather" aria-hidden="true"></span>
+        ROBIN IN DA HOOD
+      </a>
+      <nav class="nav__links">
+        <a href="#story">The Story</a>
+        <a href="#crew">The Crew</a>
+        <a href="#fox">The Fox</a>
+        <button class="nav__mute" id="mute" type="button" aria-label="Mute music" aria-pressed="false">
+          <svg class="mute-on" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4zm11.5 3a3.5 3.5 0 0 0-1.5-2.9v5.8a3.5 3.5 0 0 0 1.5-2.9zm-1.5-7.2v2.1a5.5 5.5 0 0 1 0 10.2v2.1a7.5 7.5 0 0 0 0-14.4z"/>
+          </svg>
+          <svg class="mute-off" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" hidden>
+            <path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4zm12.5 1.1-1.4-1.4-1.8 1.8-1.8-1.8-1.4 1.4 1.8 1.8-1.8 1.8 1.4 1.4 1.8-1.8 1.8 1.8 1.4-1.4-1.8-1.8 1.8-1.8z"/>
+          </svg>
+          <span>Mute</span>
+        </button>
+        <a class="nav__x" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Robin In Da Hood on X">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+            />
+          </svg>
+          <span>X</span>
+        </a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero__art">
+          <img src="assets/crew.jpg" alt="Robin In Da Hood crew in the alley — Robin, Lil' John, and Friar Tucked" />
+          <div class="hero__vignette"></div>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span>$ROBINHOOD</span><span>TAKE FROM THE RICH</span><span>GIVE TO THE POOR</span><span>WE OWN THE BLOCK</span><span>FLOCK DON'T SCARE US</span><span>MERRY MEN CREW</span>
+            <span>$ROBINHOOD</span><span>TAKE FROM THE RICH</span><span>GIVE TO THE POOR</span><span>WE OWN THE BLOCK</span><span>FLOCK DON'T SCARE US</span><span>MERRY MEN CREW</span>
+          </div>
+        </div>
+        <div class="hero__copy">
+          <p class="badge">TICKER $ROBINHOOD</p>
+          <h2 class="hero__line">Flock on every pole.<br />We still own the block.</h2>
+          <a class="scroll-cue" href="#code">Drop in</a>
+        </div>
+      </section>
+
+      <section class="code" id="code">
+        <p class="code__whisper">The only rule on the block</p>
+        <h2 class="code__graffiti reveal">
+          <span>TAKE FROM</span>
+          <span>THE RICH.</span>
+          <span class="gold">GIVE TO</span>
+          <span class="gold">THE POOR.</span>
+        </h2>
+        <p class="code__sub">They hung eyes on the street. We hung the legend louder. Take from the rich. Give to the poor. Don't give a fuck about the rest.</p>
+      </section>
+
+      <section class="story" id="story">
+        <div class="story__frame">
+          <p class="chapter">Chapter I — Flock Don't Run This</p>
+          <h2>They wired the block with cameras.<br />We didn't even look up.</h2>
+          <div class="story__grid">
+            <article class="reveal">
+              <h3>Flock on the poles</h3>
+              <p>
+                Yellow eyes on every corner. Plates. Faces. The sheriff's new forest. They hung Flock cameras like they
+                bought the street with a subscription. The crew walked under them like they were streetlights. Because
+                that's all they are.
+              </p>
+            </article>
+            <article class="reveal">
+              <h3>We own this shit</h3>
+              <p>
+                Robin pulled the hood up, kept the hat on, and stood in the lens on purpose. Same smirk. Same block.
+                They can film the alley all night. The walls still talk. The poor still eat. The cameras don't get a
+                cut.
+              </p>
+            </article>
+            <article class="reveal">
+              <h3>$ROBINHOOD</h3>
+              <p>
+                This coin is the fox that don't flinch. A crew that treats Flock like graffiti that can't paint back.
+                Take from the rich. Give to the poor. Don't give a fuck about the flock. That's the whole gospel.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="crew" id="crew">
+        <div class="crew__head">
+          <p class="chapter">Chapter II — Merry Men Crew</p>
+          <h2>Three shadows. One alley. Zero fucks for the cameras.</h2>
+        </div>
+        <div class="crew__art-wrap">
+          <img class="crew__mural" src="assets/crew.jpg" alt="The Merry Men Crew standing in a graffiti alley" />
+          <div class="crew__glow"></div>
+        </div>
+        <div class="crew__cards">
+          <article class="tag-card reveal">
+            <span class="tag-card__spray">LIL' JOHN</span>
+            <h3>The Wall</h3>
+            <p>
+              Badger. Scar. Bow like a streetlight pole. Lil' John will stand dead in a Flock frame and not blink.
+              When the crew needs a line held, he becomes the brick. Cameras don't move brick.
+            </p>
+          </article>
+          <article class="tag-card tag-card--king reveal">
+            <span class="tag-card__spray">ROBIN</span>
+            <h3>The Fox</h3>
+            <p>
+              Green hat. Navy hoodie. That look like the Flock already lost. Robin still takes from the towers and still
+              hands it down. They can watch. They can't own him. The hood named the coin after him.
+            </p>
+          </article>
+          <article class="tag-card reveal">
+            <span class="tag-card__spray">FRIAR TUCKED</span>
+            <h3>The Rat</h3>
+            <p>
+              Eyepatch. Notch in the ear. Knows every pole, every lens, every dead angle on the block — and still tags
+              the wall anyway. Friar Tucked makes sure the cameras don't get the last word.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="fox" id="fox">
+        <div class="fox__copy reveal">
+          <p class="chapter">Chapter III — King of the Corner</p>
+          <h2>Meet the fox the Flock can't cage.</h2>
+          <p>
+            He stands where the sidewalk cracks. Hood up. Feather loud. Flock staring down from the pole like it runs
+            the night. One hand in the pocket like the block already belongs to him. Because it does.
+          </p>
+          <p>
+            Robin In Da Hood is the oldest street story with new eyes on it: the greedy built the city, then they
+            wired it with cameras and called that control. The fox learned the alleys. The crew never clocked out.
+            We don't give a fuck about the flock. We own this shit.
+          </p>
+          <p class="fox__stamp">$ROBINHOOD · FLOCK DON'T SCARE US · WE OWN THE BLOCK</p>
+        </div>
+        <div class="fox__art reveal">
+          <div class="fox__halo"></div>
+          <img src="assets/mascot.jpg" alt="Robin In Da Hood mascot — the fox on the corner" />
+        </div>
+      </section>
+
+      <section class="manifesto" id="manifesto">
+        <div class="manifesto__inner reveal">
+          <p class="chapter">The last tag on the wall</p>
+          <blockquote>
+            They can hang Flock on every pole.
+            They can watch the whole damn block.
+            They can call that ownership.
+            <strong>We don't give a fuck. We own this shit.</strong>
+          </blockquote>
+          <a class="x-btn" href="https://x.com/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+            Follow the crew on X
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p>ROBIN IN DA HOOD</p>
+      <p class="foot__tick">$ROBINHOOD</p>
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
