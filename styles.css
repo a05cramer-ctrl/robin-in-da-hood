@@ -439,10 +439,7 @@ body.is-siren-hot .sirens__bar {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  filter: saturate(1.06) contrast(1.04);
-  transform: scale(1.04);
-  will-change: transform;
-  image-rendering: auto;
+  transform: none;
 }
 
 .hero__vignette {

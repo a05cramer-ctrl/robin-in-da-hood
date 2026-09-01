@@ -314,7 +314,7 @@
       "scroll",
       () => {
         const y = window.scrollY * 0.18;
-        mural.style.transform = `scale(1.04) translateY(${y}px)`;
+        mural.style.transform = `translateY(${y * 0.12}px)`;
       },
       { passive: true }
     );
